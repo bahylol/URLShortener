@@ -41,7 +41,7 @@ module.exports = function (app) {
                 const date = new Date();
                 const days = 14;
                 const dateBefore = new Date(date.getTime() - (days * 24 * 60 * 60 * 1000)).toISOString().slice(0, 19).replace('T', ' ');
-                test = await db.select("*").from("urls").where("short", newUrl).andWhere('date', '<', dateBefore);
+                test = await db.select("*").from("urls").where("short", newUrl).andWhere('date', '>', dateBefore);
             }
             while (!isEmpty(test));
             const today = new Date();
