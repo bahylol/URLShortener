@@ -12,10 +12,11 @@ app.use(cors());
 
 const shorten = require('./routes/shorten.js');
 const customShorten = require('./routes/customShorten.js');
-
+const redirector =require('./routes/redirector.js');
 
 shorten(app);
 customShorten(app);
+redirector(app);
 // HANDLE IF WE DID NOT FIND THE ROUTE WE WERE LOOKING FOR
 app.use(function (req, res, next) {
 	return res

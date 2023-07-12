@@ -9,7 +9,7 @@ module.exports = function (app) {
     app.use(bodyParser.urlencoded({
         extended: true
     }));
-    app.get('/test', async function (req, res) {
+    app.post('/customShorten', async function (req, res) {
         const server = process.env.url;
         const {
             oldUrl,
