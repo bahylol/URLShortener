@@ -21,6 +21,9 @@ module.exports = function (app) {
         if (!newUrl) {
             return res.status(400).send("Please enter Url");
         }
+        if(newUrl.length>30){
+            return res.status(400).send("New Url is too long");
+        }
         try {
             const testOldUrl = new URL(oldUrl);
         } catch (e) {
