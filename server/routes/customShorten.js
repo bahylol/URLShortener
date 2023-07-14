@@ -1,6 +1,4 @@
-const {
-    isEmpty
-} = require('lodash');
+const { isEmpty } = require('lodash');
 const db = require('../connectors/db');
 const bodyParser = require('body-parser');
 
@@ -11,17 +9,14 @@ module.exports = function (app) {
     }));
     app.post('/customShorten', async function (req, res) {
         const server = process.env.url;
-        const {
-            oldUrl,
-            newUrl
-        } = req.body;
+        const { oldUrl, newUrl } = req.body;
         if (!oldUrl) {
             return res.status(400).send("Please enter Url");
         }
         if (!newUrl) {
             return res.status(400).send("Please enter Url");
         }
-        if(newUrl.length>30){
+        if (newUrl.length > 30) {
             return res.status(400).send("New Url is too long");
         }
         try {

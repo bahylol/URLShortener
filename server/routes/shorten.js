@@ -1,6 +1,4 @@
-const {
-    isEmpty
-} = require('lodash');
+const { isEmpty } = require('lodash');
 const db = require('../connectors/db');
 const bodyParser = require('body-parser');
 
@@ -22,9 +20,7 @@ module.exports = function (app) {
     }));
     app.post('/shorten', async function (req, res) {
         const server = process.env.url;
-        const {
-            oldUrl
-        } = req.body;
+        const { oldUrl } = req.body;
         if (!oldUrl) {
             return res.status(400).send("Please enter Url");
         }

@@ -1,6 +1,4 @@
-const {
-    isEmpty
-} = require('lodash');
+const { isEmpty } = require('lodash');
 const db = require('../connectors/db');
 const bodyParser = require('body-parser');
 
@@ -10,9 +8,7 @@ module.exports = function (app) {
         extended: true
     }));
     app.get('/:link', async function (req, res) {
-        const {
-            link
-        } = req.params;
+        const { link } = req.params;
         try {
             const testDate = new Date();
             const days = 14;
