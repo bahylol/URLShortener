@@ -54,7 +54,7 @@ module.exports = function (app) {
 
             const newLink = await db('urls').insert(newLinkObj).returning('*');
 
-            return res.status(200).send(server + "/" + newUrl);
+            return res.status(200).json(`${server}?id=${newUrl}`);
         } catch (error) {
             return res.status(400).send("Could not shorten url");
         }

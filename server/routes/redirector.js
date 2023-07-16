@@ -18,9 +18,9 @@ module.exports = function (app) {
                 return res.status(400).send("Url doesnot exist");
             }
 
-            return res.status(200).send(test[0].long);
+            return res.status(200).json(`${test[0].long}`);
         } catch (error) {
-            return res.status(400).send("Could not shorten url");
+            return res.status(400).send("Could not redirect");
         }
     });
 };
