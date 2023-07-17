@@ -1,0 +1,104 @@
+:root {
+	--SL-primary-color: #29339B;
+	--SL-secondary-color: #CFDEE7;
+	--SL-trim-color: #da2c43;
+	--SL-textBox-color: #fff;
+	--SL-text-color: #333;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.Page {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 600px;
+	padding: 50px;
+}
+.container {
+	position: relative;
+	max-width: 700px;
+	width: 100%;
+	background: var(--SL-secondary-color);
+	padding: 25px;
+	border-radius: 8px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	min-width: 500px;
+}
+/* I also added this part. for the login width */
+/* Media query for screens smaller than 400px */
+@media (max-width: 500px) {
+	.container {
+		min-width: auto; /* Remove the minimum width */
+	}
+}
+.container header {
+	font-size: 1.5rem;
+	color: var(--SL-text-color);
+	font-weight: 500;
+	text-align: center;
+}
+.container .form {
+	margin-top: 30px;
+}
+.form .input-box {
+	width: 100%;
+	margin-top: 20px;
+}
+.input-box label {
+	color: var(--SL-text-color);
+}
+.input-box input {
+	background-color: var(--SL-textBox-color);
+	border-radius:50px;
+}
+.form :where(.input-box input, .select-box) {
+	position: relative;
+	height: 50px;
+	width: 100%;
+	outline: none;
+	font-size: 1rem;
+	color: #707070;
+	margin-top: 8px;
+	border: 1px solid #dddddd;
+	border-radius: 6px;
+	padding: 0 15px;
+}
+.input-box input:focus {
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.form .column {
+	display: flex;
+	column-gap: 15px;
+}
+
+.address :where(input, .select-box) {
+	margin-top: 15px;
+}
+.form button {
+	height: 55px;
+	width: 100%;
+	color: #fff;
+	font-size: 1rem;
+	font-weight: 400;
+	margin-top: 10px;
+	border: none;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	border-radius:50px;
+	background: var(--SL-primary-color);
+}
+.form button:hover {
+	background: var(--SL-primary-color);
+}
+/*Responsive*/
+@media screen and (max-width: 500px) {
+	.form .column {
+		flex-wrap: wrap;
+	}
+	.form :where(.gender-option, .gender) {
+		row-gap: 15px;
+	}
+}
