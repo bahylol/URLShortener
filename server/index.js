@@ -25,6 +25,6 @@ app.use(function (req, res, next) {
 });
 
 // START SERVER
-app.listen(3001, () => {
+app.listen(3001||process.env.PORT, () => {
 	console.log('Server is now listening at port 3001 on http://localhost:3001/');
 });
