@@ -1,12 +1,7 @@
 const config = {
 	client: 'pg',
-	connection: {
-		host: 'localhost',
-		port: 5432,
-		user: 'postgres',
-		password: 'postgres',
-		database: 'URLShortener',
-	},
+	connection: process.env.POSTGRES_URL + "?sslmode=require",
+	searchPath: ['knex', 'public'],
 };
 
 module.exports = require('knex')(config);
